@@ -15,7 +15,7 @@ import (
 
 func main() {
 
-	app := app1()
+	app := myApp()
 
 	e, err := api.NewEngine(app)
 
@@ -27,12 +27,13 @@ func main() {
 	engine.RunEngine(e)
 }
 
-func app1() *api.App {
+func myApp() *api.App {
 	app := api.NewApp()
 
 	trg := app.NewTrigger(&rest.Trigger{}, &rest.Settings{Port: 8080})
 	trg.NewHandler(&rest.HandlerSettings{Method: "GET", Path: "/blah/:num"}, RunActivities)
 
+	//store in map to avoid activity instance recreation
 	logAct, _ := api.NewActivity(&log.Activity{})
 	activities = map[string]activity.Activity{"log": logAct}
 
@@ -41,7 +42,6 @@ func app1() *api.App {
 
 var activities map[string]activity.Activity
 
-//need a way to register activities for reuse
 func RunActivities(ctx context.Context, inputs map[string]interface{}) (map[string]interface{}, error) {
 
 	trgOut := &rest.Output{}

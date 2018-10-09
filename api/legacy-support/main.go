@@ -16,7 +16,7 @@ import (
 
 func main() {
 
-	app := app1()
+	app := myApp()
 
 	e, err := api.NewEngine(app)
 
@@ -28,7 +28,7 @@ func main() {
 	engine.RunEngine(e)
 }
 
-func app1() *api.App {
+func myApp() *api.App {
 	app := api.NewApp()
 
 	restTrg := legacybridge.GetTrigger(&rest.RestTrigger{})
