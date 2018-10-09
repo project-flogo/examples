@@ -53,7 +53,6 @@ func RunActivities(ctx context.Context, input map[string]interface{}) (map[strin
 	response := make(map[string]interface{})
 
 	response["id"] = "123"
-	response["ref"] = "ref://blah"
 	response["amount"] = "1"
 	response["balance"] = "500"
 	response["currency"] = "USD"
