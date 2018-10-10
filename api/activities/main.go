@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 
-
 	log "github.com/fm-tibco/activity-log"
 	rest "github.com/fm-tibco/trigger-rest"
 	"github.com/project-flogo/core/activity"
