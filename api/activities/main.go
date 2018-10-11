@@ -3,14 +3,13 @@ package main
 import (
 	"context"
 
+	"github.com/project-flogo/contrib/activity/log"
+	"github.com/project-flogo/contrib/trigger/rest"
 	"github.com/project-flogo/core/activity"
 	"github.com/project-flogo/core/api"
 	"github.com/project-flogo/core/data/coerce"
 	"github.com/project-flogo/core/engine"
 	"github.com/project-flogo/core/support/logger"
-
-	log "github.com/project-flogo/log-act"
-	rest "github.com/project-flogo/rest-trg"
 )
 
 func main() {
