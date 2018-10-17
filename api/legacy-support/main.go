@@ -33,7 +33,8 @@ func myApp() *api.App {
 
 	restTrg := legacybridge.GetTrigger(&rest.RestTrigger{})
 	trg := app.NewTrigger(restTrg, map[string]interface{}{"port": 8080})
-	trg.NewHandler(map[string]interface{}{"method": "GET", "path": "/blah/:num"}, RunActivities)
+	h, _ := trg.NewHandler(map[string]interface{}{"method": "GET", "path": "/blah/:num"})
+	h.NewAction(RunActivities)
 
 	return app
 }

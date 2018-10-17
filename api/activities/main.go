@@ -30,7 +30,8 @@ func myApp() *api.App {
 	app := api.NewApp()
 
 	trg := app.NewTrigger(&rest.Trigger{}, &rest.Settings{Port: 8080})
-	trg.NewHandler(&rest.HandlerSettings{Method: "GET", Path: "/blah/:num"}, RunActivities)
+	h, _ := trg.NewHandler(&rest.HandlerSettings{Method: "GET", Path: "/blah/:num"})
+	h.NewAction(RunActivities)
 
 	//store in map to avoid activity instance recreation
 	logAct, _ := api.NewActivity(&log.Activity{})
