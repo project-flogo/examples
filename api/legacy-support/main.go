@@ -2,13 +2,13 @@ package main
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/TIBCOSoftware/flogo-contrib/activity/log"
 	"github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
 	"github.com/project-flogo/core/api"
 	"github.com/project-flogo/core/data/coerce"
 	"github.com/project-flogo/core/engine"
-	"github.com/project-flogo/core/support/logger"
 	"github.com/project-flogo/legacybridge"
 )
 
@@ -21,7 +21,7 @@ func main() {
 	e, err := api.NewEngine(app)
 
 	if err != nil {
-		logger.Error(err)
+		fmt.Println("Error:", err)
 		return
 	}
 

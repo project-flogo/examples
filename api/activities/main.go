@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/project-flogo/contrib/activity/log"
 	"github.com/project-flogo/contrib/trigger/rest"
@@ -9,7 +10,6 @@ import (
 	"github.com/project-flogo/core/api"
 	"github.com/project-flogo/core/data/coerce"
 	"github.com/project-flogo/core/engine"
-	"github.com/project-flogo/core/support/logger"
 )
 
 func main() {
@@ -19,7 +19,7 @@ func main() {
 	e, err := api.NewEngine(app)
 
 	if err != nil {
-		logger.Error(err)
+		fmt.Println("Error:", err)
 		return
 	}
 
@@ -34,7 +34,7 @@ func myApp() *api.App {
 	h.NewAction(RunActivities)
 
 	//store in map to avoid activity instance recreation
-	logAct, _ := api.NewActivity(&log.Activity{})
+	logAct, _ := api.NewActivity(&log.LogActivity{})
 	activities = map[string]activity.Activity{"log": logAct}
 
 	return app
