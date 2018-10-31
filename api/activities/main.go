@@ -34,7 +34,7 @@ func myApp() *api.App {
 	h.NewAction(RunActivities)
 
 	//store in map to avoid activity instance recreation
-	logAct, _ := api.NewActivity(&log.LogActivity{})
+	logAct, _ := api.NewActivity(&log.Activity{})
 	activities = map[string]activity.Activity{"log": logAct}
 
 	return app
