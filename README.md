@@ -1,6 +1,7 @@
 # Run Actions using Go-API.
 
 This short tutorial walks through how to run Flogo Actions using the Go-API provided by the flogo core.
+
 First Import the action you need to run .
 
 ```go 
@@ -55,8 +56,8 @@ import (
 	"github.com/project-flogo/core/action"
 	"github.com/project-flogo/core/api"
 	"github.com/project-flogo/core/engine"
-    "github.com/project-flogo/flow"
-    _ "github.com/project-flogo/contrib/activity/log"
+        "github.com/project-flogo/flow"
+      _ "github.com/project-flogo/contrib/activity/log"
 )
 
 func main() {
