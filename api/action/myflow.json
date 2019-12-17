@@ -1,0 +1,24 @@
+{
+  "name": "myflow",
+  "metadata": {
+    "input": [
+      {
+        "name": "in",
+        "type": "string"
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "log_2",
+      "name": "Log Message",
+      "description": "Simple Log Activity",
+      "activity": {
+        "ref": "github.com/project-flogo/contrib/activity/log",
+        "input": {
+          "message": "=$flow.in"
+        }
+      }
+    }
+  ]
+}
